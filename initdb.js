@@ -1,3 +1,4 @@
+const bcrypt = require("bcryptjs");
 const sql = require("better-sqlite3");
 const db = sql("users.db");
 
@@ -22,7 +23,16 @@ async function initData() {
   `)
 
   for (const user of users) {
-    stmt.run(user.username, user.password);
+
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(user.password, salt);
+
+    const newUser = {
+      username: user.username,
+      password: hash,
+    };
+
+    stmt.run(newUser.username, newUser.password);
   }
 }
 
