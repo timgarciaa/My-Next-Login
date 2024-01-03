@@ -1,27 +1,33 @@
-This is my Next.js Login Boilerplate.
+# Next.js Login Boilerplate
 
-Getting Started
+## Getting Started
 
-1. Run npm install
-1. Run npm run dev
-1. Open localhost:3000
+Follow these steps to get the project up and running:
 
-This will contain:
+1. Install the necessary packages: `npm install`
+2. Start the development server: `npm run dev`
+3. Open your web browser and navigate to `localhost:3000`
 
-1. Login functionality
+## Features
 
-1. Signup functionality
+This boilerplate includes the following functionalities:
 
-1. Forgot password functionality
+- Login
+- Signup
+- Forgot password
 
-Tech Stacks that I'm using/will use:
+## Tech Stack
 
-TailwindCSS
-shadcn/UI
-better-sqlite3
+The technologies used in this project include:
 
+- TailwindCSS
+- shadcn/UI
+- better-sqlite3
 
-API Endpoints:
-GET: /api/users
-POST: /api/login
-POST: /api/signup
+## API Endpoints
+
+The API provides the following endpoints:
+
+- GET: `/api/users`
+- POST: `/api/login`
+- POST: `/api/signup`

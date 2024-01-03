@@ -3,8 +3,8 @@ const sql = require("better-sqlite3");
 const db = sql("users.db");
 
 const users = [
-  { username: "admin", password: "admin" },
-  { username: "user", password: "user" },
+  { username: "admin", password: "admin12345" },
+  { username: "user", password: "user12345" },
 ]
 
 db.prepare(
