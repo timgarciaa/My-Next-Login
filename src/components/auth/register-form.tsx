@@ -29,7 +29,7 @@ const formSchema = z.object({
   password: z.string().min(8).max(50),
 });
 
-function SignUpForm({}: Props) {
+function RegisterForm({}: Props) {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -47,7 +47,6 @@ function SignUpForm({}: Props) {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <h1>Sign Up</h1>
         <FormField
           control={form.control}
           name="username"
@@ -78,10 +77,10 @@ function SignUpForm({}: Props) {
             </FormItem>
           )}
         />
-        <Button type="submit">Login</Button>
+        <Button type="submit">Sign Up</Button>
       </form>
     </Form>
   )
 }
 
-export default SignUpForm
+export default RegisterForm;

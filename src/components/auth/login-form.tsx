@@ -49,12 +49,11 @@ function LoginForm({}: Props) {
       redirect: false,
     });
 
-    console.log('login result: ', result);
-  }
+    console.log("login result: ", result);
+  };
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <h1>Login</h1>
         <FormField
           control={form.control}
           name="username"
@@ -75,7 +74,7 @@ function LoginForm({}: Props) {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="password" {...field} />
+                <Input placeholder="password" {...field} type="password" />
               </FormControl>
               <FormMessage />
             </FormItem>
