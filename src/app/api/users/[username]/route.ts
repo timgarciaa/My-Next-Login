@@ -4,7 +4,7 @@ import { getUsers } from "@/lib/dbUtils";
 
 // This API endpoint is for testing if the users are existing in the database.
 export async function GET(request: NextRequest) {
-  const users = await getUsers();
+  const users = getUsers();
 
   const response = {
     status: 200,

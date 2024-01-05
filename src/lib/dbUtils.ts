@@ -1,19 +1,21 @@
+"use server";
+
 import sql from "better-sqlite3";
 import { User } from "@/types/user.type";
 
 const db = sql("users.db");
 
-export function getUsers() {
+export async function getUsers() {
   return db.prepare("SELECT * FROM users").all();
 }
 
-export function postUser(user: User) {
+export async function postUser(user: User) {
   return db
     .prepare("INSERT INTO users (username, password) VALUES (?, ?)")
     .run(user.username, user.password);
 }
 
-export function getUser(user: User): User | any {
+export async function getUser(user: User): Promise<User | any> {
   try {
     return db
       .prepare("SELECT * FROM users WHERE username = ?")
