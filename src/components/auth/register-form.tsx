@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from 'react'
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
+import React from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -14,27 +14,26 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 
-type Props = {}
+type Props = {};
 
 const formSchema = z.object({
   username: z
     .string()
     .min(2, {
-      message: "Username must be at least 2 characters long",
+      message: 'Username must be at least 2 characters long',
     })
     .max(50),
   password: z.string().min(8).max(50),
 });
 
 function RegisterForm({}: Props) {
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      username: '',
     },
   });
 
@@ -80,7 +79,7 @@ function RegisterForm({}: Props) {
         <Button type="submit">Sign Up</Button>
       </form>
     </Form>
-  )
+  );
 }
 
 export default RegisterForm;

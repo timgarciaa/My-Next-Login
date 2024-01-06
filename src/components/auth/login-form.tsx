@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { signIn } from "next-auth/react";
+import React from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import { signIn } from 'next-auth/react';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -15,8 +15,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 
 type Props = {};
 
@@ -24,7 +24,7 @@ const formSchema = z.object({
   username: z
     .string()
     .min(2, {
-      message: "Username must be at least 2 characters long",
+      message: 'Username must be at least 2 characters long',
     })
     .max(50),
   password: z.string().min(8).max(50),
@@ -34,7 +34,7 @@ function LoginForm({}: Props) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      username: '',
     },
   });
 
@@ -43,13 +43,13 @@ function LoginForm({}: Props) {
     // ✅ This will be type-safe and validated.
     // console.log(values);
 
-    const result = await signIn("credentials", {
+    const result = await signIn('credentials', {
       username: values.username,
       password: values.password,
       redirect: false,
     });
 
-    console.log("login result: ", result);
+    console.log('login result: ', result);
   };
   return (
     <Form {...form}>

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+import { FcGoogle } from 'react-icons/fc';
+import { FaGithub } from 'react-icons/fa';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 
-export const Social = () => {
+export function Social() {
   return (
     <div className="flex items-center w-full gap-x-2">
 
@@ -18,5 +18,5 @@ export const Social = () => {
       </Button>
 
     </div>
-  )
-};
+  );
+}

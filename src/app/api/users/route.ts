@@ -1,6 +1,5 @@
-import { type NextRequest } from "next/server";
-import { getUsers } from "@/lib/dbUtils";
-
+import { type NextRequest } from 'next/server';
+import { getUsers } from '@/lib/dbUtils';
 
 // This API endpoint is for testing if the users are existing in the database.
 export async function GET(request: NextRequest) {

@@ -1,8 +1,7 @@
-import type { NextAuthConfig } from "next-auth";
-import Credentials from "next-auth/providers/credentials";
-import { User } from "@/types/user.type";
-import { verifyPassword } from "@/lib/authUtils";
-
+import type { NextAuthConfig } from 'next-auth';
+import Credentials from 'next-auth/providers/credentials';
+import { User } from '@/types/user.type';
+import { verifyPassword } from '@/lib/authUtils';
 
 export default {
   providers: [
@@ -26,7 +25,7 @@ export default {
         // return { username: user.username } as any;
 
         return null;
-      }
-    })
+      },
+    }),
   ],
-} satisfies NextAuthConfig
+} satisfies NextAuthConfig;

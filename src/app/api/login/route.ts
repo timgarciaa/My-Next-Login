@@ -1,16 +1,16 @@
-import { type NextRequest } from "next/server";
-import { getUser } from "@/lib/dbUtils";
-import bcrypt from "bcryptjs";
+import { type NextRequest } from 'next/server';
+import { getUser } from '@/lib/dbUtils';
+import bcrypt from 'bcryptjs';
 
 export async function POST(request: NextRequest) {
   const { username, password } = await request.json();
 
-  const user = getUser({ username });
+  const user = await getUser({ username });
 
   let response = {
     status: 401,
     body: {
-      message: "Invalid credentials",
+      message: 'Invalid credentials',
     },
   };
 
@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
       response = {
         status: 200,
         body: {
-          message: "Login success",
+          message: 'Login success',
         },
       };
     }

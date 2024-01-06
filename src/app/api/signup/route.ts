@@ -1,6 +1,6 @@
-import { type NextRequest } from "next/server";
-import bcrypt from "bcryptjs";
-import { postUser } from "@/lib/dbUtils";
+import { type NextRequest } from 'next/server';
+import bcrypt from 'bcryptjs';
+import { postUser } from '@/lib/dbUtils';
 
 export async function POST(request: NextRequest) {
   const { username, password } = await request.json();
@@ -23,5 +23,4 @@ export async function POST(request: NextRequest) {
   };
 
   return Response.json(response);
-
 }
