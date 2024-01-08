@@ -9,6 +9,9 @@ export const {
   signOut,
   update,
 } = NextAuth({
+  pages: {
+    signIn: '/auth/login',
+    error: '/auth/error',
+  },
   ...authConfig,
-  secret: 'test',
 });

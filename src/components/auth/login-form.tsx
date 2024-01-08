@@ -42,14 +42,17 @@ function LoginForm({}: Props) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     // console.log(values);
-
-    const result = await signIn('credentials', {
-      username: values.username,
-      password: values.password,
-      redirect: false,
-    });
-
-    console.log('login result: ', result);
+    try {
+      // waiting fix for this issue: https://github.com/nextauthjs/next-auth/issues/9309
+      const result = await signIn('credentials', {
+        username: values.username,
+        password: values.password,
+        redirect: false,
+      });
+      console.log('login result: ', result);
+    } catch (error) {
+      console.log('login error: ', error);
+    }
   };
   return (
     <Form {...form}>
