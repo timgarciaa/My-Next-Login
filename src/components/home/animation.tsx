@@ -19,11 +19,11 @@ function animation({}: Props) {
       transition={{ duration: 3 }}
       className="relative flex justify-center items-center z-10"
     >
-      <div className="absolute border border-red-500 rounded-full h-[50px] w-[50px] mt-2 animate-ping" />
-      <div className="absolute border border-red-500 rounded-full h-[100px] w-[100px] mt-2" />
-      <div className="absolute border border-red-500 rounded-full h-[150px] w-[150px] mt-2" />
-      <div className="absolute border border-red-500 rounded-full h-[200px] w-[200px] mt-2 animate-pulse" />
-      <div className="absolute border border-red-500 rounded-full h-[250px] w-[250px] mt-2" />
+      <div className="absolute border border-red-500 rounded-full h-[100px] w-[100px] mt-5 animate-ping" />
+      <div className="absolute border border-red-500 rounded-full h-[150px] w-[150px] mt-5" />
+      <div className="absolute border border-red-500 rounded-full h-[250px] w-[250px] mt-5" />
+      <div className="absolute border border-red-500 rounded-full h-[300px] w-[300px] mt-5 animate-pulse" />
+      <div className="absolute border border-red-500 rounded-full h-[350px] w-[350px] mt-5" />
       {' '}
 
     </motion.div>
