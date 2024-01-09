@@ -1,4 +1,5 @@
 import Header from '@/components/home/header';
+import Animation from '@/components/home/animation';
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className='w-full'>
-          <h1>image here</h1>
+        <div className='w-full relative flex justify-center items-center z-10'>
+          <Animation />
         </div>
       </div>
     </main>
